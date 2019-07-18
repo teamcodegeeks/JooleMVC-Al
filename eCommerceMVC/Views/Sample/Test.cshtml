@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.css"
+      asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+      asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+
+
+<h2>Sample</h2>
+@*<label>@TempData["result"]</label>*@
+<script>
+    var select = '@ViewBag.obj';
+    console.log(select);
+    var xtest = @Html.Raw(Json.Encode(ViewBag.sub));
+
+    var x = @ViewBag.sub.Count;
+    var i = 0;
+    for (i = 0; i < x; i++ ) {
+        //console.log(x[0]);
+        let l = xtest[i];
+        console.log(xtest[i]);
+    }
+    
+</script>
